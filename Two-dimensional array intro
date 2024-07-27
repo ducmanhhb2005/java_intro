@@ -1,0 +1,56 @@
+public class Main{
+   public static void main(String[] args){
+   int[][] a= new int[4][5];
+   int[][] b={
+{1,2,3},
+{4,5,6},
+    };
+//Ngoai ra co the xin cap phat so hang truoc 
+   int[][] a=new int[4][];
+   for (int i=0; i<a.length; i++) {a[i]=new int[i+1];  //a[i] dong vai tro la mot mang con, la 1 bien luu tham chieu den vung nho
+                                   System..out.println(a[i].length); //so cot
+                                   }
+  
+}
+//3 ung dung: nCk; ma tran tam giac, loang
+//Ung dung 1: nCk
+   public static int nCK( int n, int k){
+int [][] a=new int[1000][];
+   for (int i=0; i<=1000;i++){
+        a[i]=new int[i+1];
+        a[i][0]=a[i][i]=1;
+        for (int j=1; j<i; j++) a[i][j]=a[i-1][j]+a[i-1][j-1];
+        }
+return a[n][k];
+}
+//Ung dung 2: Ma tran tam giac: VD: Kiem tra xem ma tran tam giac duoi co toan so 1 khong
+   public static boolean matrix1(int[][] a){
+      for (int i=0; i<a.length; i++){
+               for (int j=0; j<i; j++) { if (a[i][j]!=1) return false;
+                                      }
+     }
+     return true;
+   }
+//Ung dung 3: Loang: VD Kiem tra xem co bao nhieu so o o trung tam co lon hon cac so chung canh hay khong
+  public static int loang(int[][] a){
+          int x[4]={-1,0,1,0};
+          int y[4]={0,1,0,-1};
+          int cnt=0;
+          int i,j,k;
+   for ( i=0; i<a.length; i++){
+      for ( j=0; j<a.length; j++){
+         for ( k=0; k<4; k++){
+              int indexi=i+x[k];
+              int indexj=j+X[k];
+         if (indexi>=0 && indexj>=0 && indexj<a.length&&indexi<a.length) {
+                 if (a[i][j]<a[indexi][indexj]) break;
+}
+}
+        if (k==3) cnt++;
+}
+  
+}
+return cnt;
+}
+
+}
