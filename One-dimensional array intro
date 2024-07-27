@@ -1,0 +1,49 @@
+import java.util.*;
+public class Main{
+public static void main(String[] args){
+//Sinh ngau nhien
+      int[] a= new int[100];
+// a luu tham chieu den mot vung nho, thong qua a ta co the thao tac voi o nho
+// a duoc goi la bien tham chieu mang
+     int[] b= a;
+// a va b luu tham chieu den cung mot vung nho=> Thay doi tren a <=> Thay doi tren b
+      Random random=new Random();
+      for (int i=0; i<a.length; i++) a[i]=random.nextInt(1000);
+      for (int x:a) System.out.println(x);
+//Mot cach khac de in mang ma khong can duyet vong for
+      System.out.println(Arrays.toString(a));
+//Trong Java, chi co Pass-by-Value
+      System.out.println(max_array(20,30,50));
+//Mot so thao tac tren mang (can thong qua lop Array)
+      Arrays.sort(a); //Sap xep a theo thu tu tang dan
+      Arrays.sort(a,x,y+1)  // Sap xep cac phan tu trong a tu [x,y]
+// int ,long, float, double la kieu du lieu nguyen thuy
+      Integer[] a={1,2,4}; //1,2,4 la cac doi tuong
+      Arrays.sort(a,Collections.reverseOrder()); //Sap xep giam dan
+      Arrays.parallelSort(a); //SX tang dan
+//Sort(nlogn)
+//Tim kiem
+    int res=Arrays.binarySearch(a,4); //Ap dung cho mang tang dan, tra ve chi so cua phan tu 4 trong mang a, neu khong tim thay thi tra ve -(Insertion Index+1);
+    int res=Arrays.binarySearch(a,1,4,4); //4 dau tien da duoc cong 1;
+    Arrays.fill(a,-1); //Toi muon tat ca cac phan tu trong mang la -1
+    Arrays.fill(a,0,10,-1); //chi so tu 0 den 9 la -1 het
+    System.arraycopy(a,0,b,0,5); //copy a vao b; tu dau , 5 phan tu
+    int[] b; //khong co new int thi no chi la mot bien mang khong co cap phat gi de luu, chua quan li o nho
+}
+//Truyen mang cho ham
+public static int max_array(int[] a){
+      int max=a[0];
+      for (int i=0; i<a.length; i++){
+          if (max<a[i]) max=a[i];
+      }
+      return max;
+}
+// variable length
+public static int max_array(int... arr){
+      int max=a[0];
+      for (int i=0; i<a.length; i++){
+          if (max<a[i]) max=a[i];
+      }
+      return max;
+}
+}
