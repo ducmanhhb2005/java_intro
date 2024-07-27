@@ -1,0 +1,14 @@
+//Sang Eratosthenes
+public class Main{
+boolean[] prime=new boolean[10000001];
+public static void sang(){
+Arrays.fill(prime,true);
+prime[0]=false; 
+prime[1]=false;
+for (int i=2; i<=(int) Math.sqrt(10000000); i++){
+     if (prime[i]==true) {
+                          for (int j=i*i; j<=1000000; j+=i) prime[j]=false;
+    }
+}
+}
+}
